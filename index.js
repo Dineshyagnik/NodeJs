@@ -37,14 +37,34 @@
 
 
 
-const http = require('http');
+// const http = require('http');
 
-http.createServer((req,res)=>{
-    res.write('<h1>Hello Dinesh</h1>');
-    res.end();    
-}).listen(2200);
+// http.createServer((req,res)=>{
+//     res.write('<h1>Hello Dinesh</h1>');
+//     res.end();    
+// }).listen(2200);
 
 
-const fs=require('fs');
+// const fs=require('fs');
 
-fs.writeFileSync("din.txt","Dinesh");
+// fs.writeFileSync("din.txt","Dinesh");
+
+
+
+// const fs=require('fs');
+
+// fs.writeFileSync("new.txt","Hello Something");
+
+// const http=require('http');
+
+// http.createServer((req,res)=>{
+//     res.write("<h1>Hello node server</h1>");
+//     res.end();
+// }).listen(2200);
+
+var http = require('http');
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.end('Hello World!');
+}).listen(8080);
