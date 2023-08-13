@@ -111,18 +111,28 @@
 
 // console.log(process.argv[3]);
 
-const fs=require('fs');
-const input=process.argv;
+// const fs=require('fs');
+// const input=process.argv;
 
-if(input[2]=='add')
-{
-    fs.writeFileSync(input[3],input[4]);
-}
-else if(input[2]=='remove')
-{
-    fs.unlinkSync(input[3])
-}
-else
-{
-    console.log('Invailid input');
-}
+// if(input[2]=='add')
+// {
+//     fs.writeFileSync(input[3],input[4]);
+// }
+// else if(input[2]=='remove')
+// {
+//     fs.unlinkSync(input[3])
+// }
+// else
+// {
+//     console.log('Invailid input');
+// }
+
+
+// const fs=require('fs');
+// fs.writeFileSync("Arya.txt","Hi I am Arya.")
+
+const http=require('http');
+http.createServer((req,res)=>{
+    res.write("<h1>Hello World!</h1>")
+    res.closed;
+}).listen(1201);
