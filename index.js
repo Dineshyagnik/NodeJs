@@ -128,11 +128,57 @@
 // }
 
 
+// create multiple files in a folder 
 // const fs=require('fs');
-// fs.writeFileSync("Arya.txt","Hi I am Arya.")
+// const path=require('path');
+// const dirpath=path.join(__dirname,'files');
 
-const http=require('http');
-http.createServer((req,res)=>{
-    res.write("<h1>Hello World!</h1>")
-    res.closed;
-}).listen(1201);
+// // for(let i=0;i<5;i++){
+// //     fs.writeFileSync(dirpath+"/loop"+i+".txt","A simple text file");
+// //     // fs.writeFileSync(`loop${i}.txt`,"A simple text file");
+// // }
+
+// fs.readdir(dirpath,(err,files)=>{
+//     files.forEach((item)=>{
+//         console.log(item);
+//     })
+// })
+
+
+const fs =require('fs');
+const path=require('path');
+const dirpath=path.join(__dirname,'crud');
+const filepath=`${dirpath}/tel.txt`;
+
+// Create
+// fs.writeFileSync(filepath,"Dummy Text");
+
+// Read
+// fs.readFile(filepath,'utf8',(err,item)=>{
+// console.log(item);
+// });
+
+// Update 
+// fs.appendFile(filepath,'Crud operation using nodejs',(err)=>{
+//     if(!err) console.log("File is updated");
+// });
+
+// Change File name 
+// fs.rename(filepath,`${dirpath}/demo.txt`,(err)=>{
+//     if(! err) console.log('File name is updated');
+// });
+
+// Delete 
+// fs.unlinkSync(`${dirpath}/demo.txt`);
+
+
+// Synchronous and Asynchronous
+let a=10;
+let b=0;
+
+setTimeout(()=>{
+b=20;
+},2000)
+
+console.log(a+b);
+
