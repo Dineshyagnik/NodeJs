@@ -145,10 +145,10 @@
 // })
 
 
-const fs =require('fs');
-const path=require('path');
-const dirpath=path.join(__dirname,'crud');
-const filepath=`${dirpath}/tel.txt`;
+// const fs =require('fs');
+// const path=require('path');
+// const dirpath=path.join(__dirname,'crud');
+// const filepath=`${dirpath}/tel.txt`;
 
 // Create
 // fs.writeFileSync(filepath,"Dummy Text");
@@ -173,12 +173,15 @@ const filepath=`${dirpath}/tel.txt`;
 
 
 // Synchronous and Asynchronous
-let a=10;
-let b=0;
+// let a=10;
+// let b=0;
 
-setTimeout(()=>{
-b=20;
-},2000)
+// setTimeout(()=>{
+// b=20;
+// },2000)
 
-console.log(a+b);
+// console.log(a+b);
 
+
+const fs = require('fs');
+fs.writeFileSync("new.txt","This is a text file");
