@@ -177,11 +177,40 @@
 // let b=0;
 
 // setTimeout(()=>{
-// b=20;
-// },2000)
+//     b=20
+//      },2000)
 
 // console.log(a+b);
 
 
-const fs = require('fs');
-fs.writeFileSync("new.txt","This is a text file");
+
+// // Promise
+// let a = 10;
+// let b = 0;
+
+// let waitingData = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve(30)
+//     }, 2000)
+// });
+
+// waitingData.then((data) => {
+//     b = data;
+//     console.log(a + b);
+// });
+
+// How node js works
+// console.log("Starting up");
+
+// setTimeout(() => {
+//     console.log("2 second log");
+// }, 2000)
+
+// setTimeout(() => {
+//     console.log("0 second log");
+// }, 0)
+
+// console.log("finishing up");
+
+
+
