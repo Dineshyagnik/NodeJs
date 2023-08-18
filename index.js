@@ -214,3 +214,79 @@
 
 
 
+// views and dyanamic routing 
+// --------------------------------------------------------------------------------
+
+// const express = require('express');
+// const path = require('path');
+
+// const app = express();
+// const publicPath = path.join(__dirname, 'public')
+
+// // app.use(express.static(publicPath));
+
+// app.set('view engine', 'ejs');
+
+// app.get('', (req, res) => {
+//     res.sendFile(`${publicPath}/index.html`)
+// });
+
+// app.get('/profile', (req, res) => {
+//     const user = {
+//         name: 'Dinesh',
+//         email: 'dinesh22@gmail.com',
+//         city: 'Noida',
+//         skills: ['Js', 'jQuery', 'Node', 'express', 'MonogoDB', 'NextJS', 'ReactJS']
+//     }
+//     res.render('profile', { user });
+// });
+
+// app.get('/login', (req, res) => {
+//     res.render('login');
+// });
+
+// app.get('/about', (req, res) => {
+//     res.sendFile(`${publicPath}/about.html`)
+// });
+
+// app.get('/help', (req, res) => {
+//     res.sendFile(`${publicPath}/help.html`)
+// });
+
+// app.get('*', (req, res) => {
+//     res.sendFile(`${publicPath}/nopage.html`)
+// });
+
+// app.listen(4000);
+
+
+
+//middleware
+const express=require('express');
+const app=express();
+
+const reqFilter=(req,resp,next)=>{
+  if(!req.query.age)
+  {
+    resp.send("Please provide age")
+  }
+  else if(req.query.age<18){
+    resp.send("You can not access this page")
+  }
+  else{
+
+      next();
+  }
+}
+
+app.use(reqFilter)
+
+app.get('',(req,res)=>{
+    res.send('Welcome to home page')
+});
+
+app.get('/user',(req,res)=>{
+    res.send('Welcome to user page')
+})
+
+app.listen(3000);
