@@ -293,31 +293,53 @@
 
 
 //route level middleware
-const express=require('express');
-const reqFilter=require('./middleware')
-const app=express();
-const route=express.Router();
+// const express=require('express');
+// const reqFilter=require('./middleware')
+// const app=express();
+// const route=express.Router();
 
-// app.use(reqFilter)
+// // app.use(reqFilter)
 
-route.use(reqFilter)
+// route.use(reqFilter)
 
-app.get('/',(req,res)=>{
-    res.send('Welcome to home page')
-});
+// app.get('/',(req,res)=>{
+//     res.send('Welcome to home page')
+// });
 
-app.get('/user',(req,res)=>{
-    res.send('Welcome to user page')
-});
+// app.get('/user',(req,res)=>{
+//     res.send('Welcome to user page')
+// });
 
-route.get('/about',(req,res)=>{
-  res.send('Welcome to About Page')
-});
+// route.get('/about',(req,res)=>{
+//   res.send('Welcome to About Page')
+// });
 
-route.get('/contact',(req,res)=>{
-  res.send('Welcome to Contact page')
-});
+// route.get('/contact',(req,res)=>{
+//   res.send('Welcome to Contact page')
+// });
 
-app.use('/',route)
+// app.use('/',route)
 
-app.listen(3000);
+// app.listen(3000);
+
+
+// ----------------------------------------------------------------------------------------
+// mongoDB with NodeJS
+// Database Conectivity
+// const MongoClient = require('mongodb').MongoClient;
+const {MongoClient} = require('mongodb');
+const url = 'mongodb://localhost:27017';
+const databse = 'e-com';
+const client = new MongoClient(url);
+
+async function getData()
+{
+  let result = await client.connect();
+  let db = result.db(databse);
+  let collection = db.collection('products');
+  let response = await collection.find({}).twoArray();
+  console.log(response);
+}
+
+getData();
+
