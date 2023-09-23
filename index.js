@@ -327,19 +327,30 @@
 // mongoDB with NodeJS
 // Database Conectivity
 // const MongoClient = require('mongodb').MongoClient;
-const {MongoClient} = require('mongodb');
-const url = 'mongodb://localhost:27017';
-const databse = 'e-com';
-const client = new MongoClient(url);
+// const {MongoClient} = require('mongodb');
+// const url = 'mongodb://localhost:27017';
+// const databse = 'e-com';
+// const client = new MongoClient(url);
 
-async function getData()
-{
-  let result = await client.connect();
-  let db = result.db(databse);
-  let collection = db.collection('products');
-  let response = await collection.find({}).twoArray();
-  console.log(response);
-}
+// async function getData()
+// {
+//   let result = await client.connect();
+//   let db = result.db(databse);
+//   let collection = db.collection('products');
+//   let response = await collection.find({}).twoArray();
+//   console.log(response);
+// }
 
-getData();
+// getData();
+
+
+
+
+
+
+
+//
+// Start Again 
+
+console.log("Hello NodeJs");
 
