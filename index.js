@@ -352,5 +352,20 @@
 //
 // Start Again 
 
-console.log("Hello NodeJs");
+// console.log("Hello NodeJs");
 
+// const _ =require('lodash');
+// const arr=[1,3,46,7];
+// console.log(_.chunk(arr));
+// console.log(_.last(arr));
+
+// const cowsay = require('cowsay');
+// console.log(cowsay.say({
+//     text: 'I am learning NPM module',
+//     e: '00',
+//     t: 'u'
+// }));
+
+const {tesla,ford} = require('./car');
+console.log(JSON.stringify(ford,null, 3));
+console.log(JSON.stringify(tesla,undefined, 2));
