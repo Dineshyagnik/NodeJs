@@ -389,8 +389,8 @@ const filePath = "Users\dyyay\OneDrive\Documents\GitHub\NodeJs\filess\sample.txt
 // console.log(path.join(path.dirname(filePath),sampleFile));
 
 
-const fs = require('fs');
-const fsPromise = require('fs').promises;
+// const fs = require('fs');
+// const fsPromise = require('fs').promises;
 // Reading from a file-Async
 // console.log(fs);
 // fs.readFile(filePath, "utf-8", (err, data) => {
@@ -419,8 +419,8 @@ const fsPromise = require('fs').promises;
 // filereading();
 
 //writing into file 
-const txtFile = path.join(__dirname, "filess", "text.txt");
-const content = "Hello NodeJS! ";
+// const txtFile = path.join(__dirname, "filess", "text.txt");
+// const content = "Hello NodeJS! ";
 // fs.writeFile(txtFile, content, (err) => {
 //     if (err) throw new Error("Something went wrong!");
 //     console.log("write operation completed successfully");
@@ -430,22 +430,23 @@ const content = "Hello NodeJS! ";
 //     })
 // });
 
-const writingInFile = async () => {
-    try {
-        await fsPromise.writeFile(txtFile, "\n we have given new name of file", {
-            flag: 'a+',
-        });
-        // await fsPromise.appendFile(txtFile, '\n this is file appender');
+// const writingInFile = async () => {
+//     try {
+//         await fsPromise.writeFile(txtFile, "\n we have given new name of file", {
+//             flag: 'a+',
+//         });
+//         // await fsPromise.appendFile(txtFile, '\n this is file appender');
         
-        await fs.promises.rename(txtFile,path.join(__dirname,"filess","newtxt.txt"))
+//         await fs.promises.rename(txtFile,path.join(__dirname,"filess","newtxt.txt"))
 
-        const data = await fsPromise.readFile(path.join(__dirname,"filess","newtxt.txt"));
-        console.log(data.toString());
-    }
-    catch (err) {
-        console.log(err);
-    }
+//         const data = await fsPromise.readFile(path.join(__dirname,"filess","newtxt.txt"));
+//         console.log(data.toString());
+//     }
+//     catch (err) {
+//         console.log(err);
+//     }
 
-};
+// };
 
-writingInFile()
+// writingInFile()
+
