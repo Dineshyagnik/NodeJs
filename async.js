@@ -1,12 +1,15 @@
 console.log('Start Operation');
 
 function Sleep(milisecond) {
-    let startTime = new Date().getTime();
+    // let startTime = new Date().getTime();
     console.log('Opration is running');
-    while (new Date().getTime() < startTime + milisecond) {
-        console.log('in progress');
-    }
-    console.log('opration is done !!');
+    // while (new Date().getTime() < startTime + milisecond) {
+    //     console.log('in progress');
+    // }
+
+    setTimeout(() => {
+        console.log('opration is done !!');
+    },milisecond)
 }
 Sleep(1000);
 
