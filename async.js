@@ -14,7 +14,3 @@ function Sleep(milisecond) {
 Sleep(1000);
 
 console.log('Do something else...');
-console.log('Do something else...');
-console.log('Do something else...');
-console.log('Do something else...');
-console.log('Do something else...');
