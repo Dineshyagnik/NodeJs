@@ -38,17 +38,6 @@ function makeApiCall(cb) {
     }, 0);
 }
 
-// makeApiCall(() => {
-//     makeApiCall(() => {
-//         asyncTask(() => {
-//             asyncTask(() => {
-//                 asyncTask(() => { })
-//             })
-//         })
-//     })
-// })
-
-
 makeApiCall(() => {
     makeApiCall(() => {
         asyncTask(() => {
@@ -58,5 +47,3 @@ makeApiCall(() => {
         })
     })
 })
-
-makeApiCall();
