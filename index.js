@@ -450,3 +450,5 @@ const filePath = "Users\dyyay\OneDrive\Documents\GitHub\NodeJs\filess\sample.txt
 
 // writingInFile()
 
+const dinesh=require('./second');
+console.log('Hello World',obj);
