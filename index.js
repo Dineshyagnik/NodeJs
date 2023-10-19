@@ -436,7 +436,7 @@ const filePath = "Users\dyyay\OneDrive\Documents\GitHub\NodeJs\filess\sample.txt
 //             flag: 'a+',
 //         });
 //         // await fsPromise.appendFile(txtFile, '\n this is file appender');
-        
+
 //         await fs.promises.rename(txtFile,path.join(__dirname,"filess","newtxt.txt"))
 
 //         const data = await fsPromise.readFile(path.join(__dirname,"filess","newtxt.txt"));
@@ -450,5 +450,5 @@ const filePath = "Users\dyyay\OneDrive\Documents\GitHub\NodeJs\filess\sample.txt
 
 // writingInFile()
 
-const dinesh=require('./second');
-console.log('Hello World',obj);
+const dinesh = require('./second');
+console.log('Hello World', obj);
