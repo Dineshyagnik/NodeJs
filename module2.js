@@ -1,5 +1,5 @@
 function simple() {
-    console.log("Simple is complex");
+    console.log("Simple function");
 }
 
 module.exports = simple;
