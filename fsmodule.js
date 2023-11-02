@@ -13,6 +13,17 @@ const fs = require('fs');
 //     console.log('Written to the efile');
 // });
 
-const a = fs.writeFileSync('text2.txt', 'text 3')
-console.log(a);
-console.log('Finished reading file.');
+// const a = fs.writeFileSync('text2.txt', 'text 3')
+// console.log(a);
+// console.log('Finished reading file.');
+
+
+const { open } = require('node:fs/promises');
+
+(async () => {
+  const file = await open('./some/file/to/read');
+
+  for await (const line of file.readLines()) {
+    console.log(line);
+  }
+})();
