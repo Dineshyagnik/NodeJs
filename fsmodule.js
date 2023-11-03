@@ -1,4 +1,4 @@
-const fs = require('fs');
+// const fs = require('fs');
 
 // fs.writeFileSync("text.txt", "Hello Node");
 
@@ -18,12 +18,18 @@ const fs = require('fs');
 // console.log('Finished reading file.');
 
 
-const { open } = require('node:fs/promises');
+// const { open } = require('node:fs/promises');
 
-(async () => {
-  const file = await open('./some/file/to/read');
+// (async () => {
+//   const file = await open('./some/file/to/read');
 
-  for await (const line of file.readLines()) {
-    console.log(line);
-  }
-})();
+//   for await (const line of file.readLines()) {
+//     console.log(line);
+//   }
+// })();
+
+
+const fs = require('fs');
+
+fs.writeFileSync('test.txt','This is a testing file');
+
