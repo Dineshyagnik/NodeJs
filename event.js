@@ -1,17 +1,28 @@
-// import { EventEmitter } from 'events'; 
-const EventEmitter = require('events')
+// // import { EventEmitter } from 'events'; 
+// const EventEmitter = require('events')
 
-class MyEmitter extends EventEmitter { }
+// class MyEmitter extends EventEmitter { }
 
-const myEmitter = new MyEmitter();
+// const myEmitter = new MyEmitter();
 
-myEmitter.on('WaterFull', () => {
-    console.log('Please turn off the mootor!');
-    setTimeout(() => {
-        console.log('Please turn off the motor! Its a gentle reminder');
-    }, 3000);
+// myEmitter.on('WaterFull', () => {
+//     console.log('Please turn off the mootor!');
+//     setTimeout(() => {
+//         console.log('Please turn off the motor! Its a gentle reminder');
+//     }, 3000);
+// });
+
+// console.log('The script is running');
+// myEmitter.emit('WaterFull');
+// console.log('The script is still running');
+
+
+
+const events = require('node:events');
+events.captureRejections = true;
+const ee1 = new events.EventEmitter();
+ee1.on('something', async (value) => {
+    throw new Error('kaboom');
 });
 
-console.log('The script is running');
-myEmitter.emit('WaterFull');
-console.log('The script is still running');
+ee1.on('error', console.log);
