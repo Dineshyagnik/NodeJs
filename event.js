@@ -18,11 +18,21 @@
 
 
 
-const events = require('node:events');
-events.captureRejections = true;
-const ee1 = new events.EventEmitter();
-ee1.on('something', async (value) => {
-    throw new Error('kaboom');
-});
+// const events = require('node:events');
+// events.captureRejections = true;
+// const ee1 = new events.EventEmitter();
+// ee1.on('something', async (value) => {
+//     throw new Error('kaboom');
+// });
 
-ee1.on('error', console.log);
+// ee1.on('error', console.log);
+
+const EventEmitter = require('node:events');
+class MyEmitter extends EventEmitter { }
+const myEmitter = new MyEmitter();
+myEmitter.on('event', (a, b) => {
+    setImmediate(() => {
+        console.log('this happens asynchronously');
+    });
+});
+myEmitter.emit('event', 'a', 'b');
