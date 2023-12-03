@@ -56,13 +56,18 @@ function doSomething() {
 // exception with Async and Await
 
 
-const someFunction = async () => {
-    try {
-        await doSomething();
-    }
-    catch(error){
-        // console.log(error);
-        throw new customError(error.message)
-    }
-};
-someFunction();
+// const someFunction = async () => {
+//     try {
+//         await doSomething();
+//     }
+//     catch(error){
+//         // console.log(error);
+//         throw new customError(error.message)
+//     }
+// };
+// someFunction();
+
+
+const myObject = {};
+Error.captureStackTrace(myObject);
+myObject.stack;  // Similar to `new Error().stack`
