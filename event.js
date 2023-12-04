@@ -27,12 +27,25 @@
 
 // ee1.on('error', console.log);
 
+// const EventEmitter = require('node:events');
+// class MyEmitter extends EventEmitter { }
+// const myEmitter = new MyEmitter();
+// myEmitter.on('event', (a, b) => {
+//     setImmediate(() => {
+//         console.log('this happens asynchronously');
+//     });
+// });
+// myEmitter.emit('event', 'a', 'b');
+
+
 const EventEmitter = require('node:events');
-class MyEmitter extends EventEmitter { }
+class MyEmitter extends EventEmitter {}
 const myEmitter = new MyEmitter();
-myEmitter.on('event', (a, b) => {
-    setImmediate(() => {
-        console.log('this happens asynchronously');
-    });
+let m = 0;
+myEmitter.on('event', () => {
+  console.log(++m);
 });
-myEmitter.emit('event', 'a', 'b');
+myEmitter.emit('event');
+// Prints: 1
+myEmitter.emit('event');
+// Prints: 2
