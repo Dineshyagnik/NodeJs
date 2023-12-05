@@ -68,6 +68,13 @@ function doSomething() {
 // someFunction();
 
 
-const myObject = {};
-Error.captureStackTrace(myObject);
-myObject.stack;  // Similar to `new Error().stack`
+// const myObject = {};
+// Error.captureStackTrace(myObject);
+// myObject.stack;  // Similar to `new Error().stack`
+
+const EventEmitter = require('node:events');
+const ee = new EventEmitter();
+
+setImmediate(() => {
+  ee.emit('error', new Error('This will crash'));
+}); 
