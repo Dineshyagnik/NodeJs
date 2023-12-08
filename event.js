@@ -50,10 +50,23 @@
 // myEmitter.emit('event');
 // // Prints: 2
 
+// const EventEmitter = require('node:events');
+// class MyEmitter extends EventEmitter {}
+// const myEmitter = new MyEmitter();
+// myEmitter.on('event', function(a, b) {
+//   console.log(a, b, this, this === myEmitter);
+// });
+// myEmitter.emit('event', 'a', 'b');
+
+
 const EventEmitter = require('node:events');
 class MyEmitter extends EventEmitter {}
 const myEmitter = new MyEmitter();
-myEmitter.on('event', function(a, b) {
-  console.log(a, b, this, this === myEmitter);
+let m = 0;
+myEmitter.once('event', () => {
+  console.log(++m);
 });
-myEmitter.emit('event', 'a', 'b');
+myEmitter.emit('event');
+// Prints: 1
+myEmitter.emit('event');
+// Ignored
