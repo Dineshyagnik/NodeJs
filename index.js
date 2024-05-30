@@ -371,9 +371,9 @@
 // console.log(JSON.stringify(tesla,undefined, 2));
 
 
-const path = require('path');
+// const path = require('path');
 
-const filePath = "Users\dyyay\OneDrive\Documents\GitHub\NodeJs\filess\sample.txt";
+// const filePath = "Users\dyyay\OneDrive\Documents\GitHub\NodeJs\filess\sample.txt";
 
 
 // // dirname
@@ -450,5 +450,67 @@ const filePath = "Users\dyyay\OneDrive\Documents\GitHub\NodeJs\filess\sample.txt
 
 // writingInFile()
 
-const dinesh = require('./second');
-console.log('Hello World', obj);
+// const dinesh = require('./second');
+// console.log('Hello World', obj);
+
+
+
+// console.log('nodejs again');
+
+// var a=30;
+// var b=20;
+// var c=10;
+
+// console.warn(a+b+c);
+
+
+// var x=30;
+// let y=20;
+// const z=10;
+// z=10; // throw eror
+// console.warn(x+y+z);
+
+
+// var x=20;
+// if(x===0){
+//     console.log('matched');
+// }
+// else{
+//     console.log('not matched');
+// }
+
+// for(let i=0;i<=10;i++){
+//     console.log(i);
+// }
+
+
+// let num = 3;
+
+// for(let i=1;i<=10;i++){
+//     console.log(`${num} * ${i} = ${num * i}`);
+// }
+
+
+// let arr=[2,44,3,6,8,9,0];
+// console.log(arr);
+
+
+// const app = require('./app');
+// // console.log(app);
+// // console.log(app.x);
+// // console.log(app.y);
+// console.log(app.z());
+
+
+
+let arr=[2,44,3,6,8,9,9,0];
+
+let filteredValue=arr.filter((val)=>{
+    // return val>10;
+    // return val<10;
+    return val===9;
+});
+console.log(filteredValue);
+
+
+//5vid
