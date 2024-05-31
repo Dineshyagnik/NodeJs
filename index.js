@@ -503,14 +503,17 @@
 
 
 
-let arr=[2,44,3,6,8,9,9,0];
+// let arr=[2,44,3,6,8,9,9,0];
 
-let filteredValue=arr.filter((val)=>{
-    // return val>10;
-    // return val<10;
-    return val===9;
-});
-console.log(filteredValue);
+// let filteredValue=arr.filter((val)=>{
+//     // return val>10;
+//     // return val<10;
+//     return val===9;
+// });
+// console.log(filteredValue);
 
 
-//5vid
+const fs = require('fs');
+// fs.writeFileSync("some.txt","Some text");
+// console.log('----->>>>>',__dirname);
+console.log('----->>>>>',__filename);
