@@ -513,7 +513,53 @@
 // console.log(filteredValue);
 
 
-const fs = require('fs');
+// const fs = require('fs');
 // fs.writeFileSync("some.txt","Some text");
 // console.log('----->>>>>',__dirname);
-console.log('----->>>>>',__filename);
+// console.log('----->>>>>',__filename);
+
+
+
+// const http = require('http');
+
+// http.createServer((req,resp)=>{
+//     resp.write("<h1>Hello World</h1>");
+//     resp.end();
+
+// }).listen(4500);
+
+
+
+// function dataControl(req,resp){
+//     resp.write('<h1>Hello NodeJs</h1>');
+//     resp.end();
+// };
+
+// http.createServer(dataControl).listen(4500);
+
+
+
+// const dataControl=(req, resp)=>{
+//     resp.write('<h1>Hello NodeJs Again</h1>');
+//     resp.end();
+// };
+
+// http.createServer(dataControl).listen(4500);
+
+
+
+
+// const colors = require('colors');
+
+// // console.log('hello'.green);
+// console.log('i like cake and pies'.underline.red)
+
+
+const chalk=require('chalk');
+
+// console.log(chalk.blue('Hello'));
+// console.log(chalk.blue.bgRed.bold('Hello world!'));
+
+const log = console.log;
+
+log(chalk.blue('Hello') + ' World' + chalk.red('!'));
