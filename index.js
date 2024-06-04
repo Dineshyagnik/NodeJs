@@ -555,11 +555,38 @@
 // console.log('i like cake and pies'.underline.red)
 
 
-const chalk=require('chalk');
+// const chalk=require('chalk');
 
-// console.log(chalk.blue('Hello'));
-// console.log(chalk.blue.bgRed.bold('Hello world!'));
+// // console.log(chalk.blue('Hello'));
+// // console.log(chalk.blue.bgRed.bold('Hello world!'));
 
-const log = console.log;
+// const log = console.log;
 
-log(chalk.blue('Hello') + ' World' + chalk.red('!'));
+// log(chalk.blue('Hello') + ' World' + chalk.red('!'));
+
+
+
+
+
+// const http= require('http');
+
+// http.createServer((req,resp)=>{
+//     resp.write("<h1>Hello Madhukar</h1>");
+//     resp.end();
+// }).listen(8000);
+
+
+
+
+// create a simple API 
+
+const http = require('http');
+const data = require('./data')
+
+http.createServer((req,resp)=>{
+
+    resp.writeHead(200,{'Content-Type':'application/json'});
+    resp.write(JSON.stringify(data));
+    resp.end();
+
+}).listen(7000);
