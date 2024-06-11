@@ -613,23 +613,24 @@
 
 
 
-// const EventEmitter = require('node:events');
+const fs = require('fs');
+const path = require('path');
+const dirPath = path.join(__dirname, 'files');
 
-// class MyEmitter extends EventEmitter {}
+console.log(dirPath);
 
-// const myEmitter = new MyEmitter();
-// myEmitter.on('event', () => {
-//   console.log('an event occurred!');
-// });
-// myEmitter.emit('event');
+// for(i=0;i<5;i++)
+// {
+//   fs.writeFileSync(dirPath+'/hello'+i+'.txt','simple text file');
+//   // fs.writeFileSync(dirPath+`/hello'${i}'.txt`,'simple text file');
+// }
 
-
-
-const EventEmitter = require('node:events');
-class MyEmitter extends EventEmitter {}
-const myEmitter = new MyEmitter();
-myEmitter.on('event', (a, b) => {
-  console.log(a, b, this);
-  // Prints: a b {}
+fs.readdir(dirPath,(err,files)=>{
+  // console.log(files);
+  files.forEach((item)=>{
+console.log('file name is',item);
+  })
 });
-myEmitter.emit('event', 'a', 'b');
+
+// fs.writeFileSync('demo.txt','Simple Demo file');
+
