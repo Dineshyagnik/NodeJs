@@ -613,24 +613,55 @@
 
 
 
+// const fs = require('fs');
+// const path = require('path');
+// const dirPath = path.join(__dirname, 'files');
+
+// console.log(dirPath);
+
+// // for(i=0;i<5;i++)
+// // {
+// //   fs.writeFileSync(dirPath+'/hello'+i+'.txt','simple text file');
+// //   // fs.writeFileSync(dirPath+`/hello'${i}'.txt`,'simple text file');
+// // }
+
+// fs.readdir(dirPath,(err,files)=>{
+//   // console.log(files);
+//   files.forEach((item)=>{
+// console.log('file name is',item);
+//   })
+// });
+
+// // fs.writeFileSync('demo.txt','Simple Demo file');
+
+
+
+// CRUD Operation 
+
 const fs = require('fs');
 const path = require('path');
-const dirPath = path.join(__dirname, 'files');
+const dirpath = path.join(__dirname,'crud');
+const filePath = `${dirpath}/crud.txt`;
 
-console.log(dirPath);
 
-// for(i=0;i<5;i++)
-// {
-//   fs.writeFileSync(dirPath+'/hello'+i+'.txt','simple text file');
-//   // fs.writeFileSync(dirPath+`/hello'${i}'.txt`,'simple text file');
-// }
+// create 
+// fs.writeFileSync(filePath,'Crud operation');
 
-fs.readdir(dirPath,(err,files)=>{
-  // console.log(files);
-  files.forEach((item)=>{
-console.log('file name is',item);
-  })
-});
+// Read 
+// fs.readFile(filePath,'utf-8',(err,data)=>{
+//   console.log(data);
+// });
 
-// fs.writeFileSync('demo.txt','Simple Demo file');
+// update 
+// fs.appendFile(filePath,'and this  is a tutorial on youtube',(err)=>{
+//   if(!err) console.log('file is updated');
+// });
 
+// rename
+// fs.rename(filePath,`${dirpath}/crud-rename.txt`,(err)=>{
+//   if(!err) console.log('File renamed successfully');
+// });
+
+
+// delete 
+fs.unlinkSync(`${dirpath}/crud-rename.txt`);
