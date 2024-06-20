@@ -638,10 +638,10 @@
 
 // CRUD Operation 
 
-const fs = require('fs');
-const path = require('path');
-const dirpath = path.join(__dirname,'crud');
-const filePath = `${dirpath}/crud.txt`;
+// const fs = require('fs');
+// const path = require('path');
+// const dirpath = path.join(__dirname,'crud');
+// const filePath = `${dirpath}/crud.txt`;
 
 
 // create 
@@ -664,4 +664,33 @@ const filePath = `${dirpath}/crud.txt`;
 
 
 // delete 
-fs.unlinkSync(`${dirpath}/crud-rename.txt`);
+// fs.unlinkSync(`${dirpath}/crud-rename.txt`);
+
+
+
+// Asynchronous Programming Language
+// console.log('start exe...');
+
+// setTimeout(() => {
+//     console.log('logic exe...');
+// }, 2000);
+
+// console.log('complete exe...');
+
+
+// console.log('start exe...');
+
+let a=10;
+let b=0;
+
+setTimeout(() => {
+    b=5;
+    console.log(a+b);
+}, 2000);
+
+console.log(a+b);
+
+
+
+
+
