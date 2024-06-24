@@ -680,17 +680,34 @@
 
 // console.log('start exe...');
 
-let a=10;
-let b=0;
+// let a=10;
+// let b=0;
 
-setTimeout(() => {
-    b=5;
-    console.log(a+b);
-}, 2000);
+// setTimeout(() => {
+//     b=5;
+//     console.log(a+b);
+// }, 2000);
 
-console.log(a+b);
-
-
+// console.log(a+b);
 
 
 
+// const { unlink } = require('node:fs/promises');
+
+// (async function(path) {
+//   try {
+//     await unlink(path);
+//     console.log(`successfully deleted ${path}`);
+//   } catch (error) {
+//     console.error('there was an error:', error.message);
+//   }
+// })('/tmp/hello');
+
+
+
+const { unlink } = require('node:fs');
+
+unlink('/tmp/hello', (err) => {
+  if (err) throw err;
+  console.log('successfully deleted /tmp/hello');
+});
