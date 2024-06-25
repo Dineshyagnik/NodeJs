@@ -691,23 +691,62 @@
 // console.log(a+b);
 
 
+// Handle asynchronous data
 
-// const { unlink } = require('node:fs/promises');
-
-// (async function(path) {
-//   try {
-//     await unlink(path);
-//     console.log(`successfully deleted ${path}`);
-//   } catch (error) {
-//     console.error('there was an error:', error.message);
-//   }
-// })('/tmp/hello');
+// let a=20;
+// let b=0;
 
 
+// let waitingData = new Promise((resolve,reject)=>{
+//   setTimeout(() => {
+//     resolve(30)
+//   }, 2000);
+// });
 
-const { unlink } = require('node:fs');
+// waitingData.then((data)=>{
+//   console.log(a+data);
+// });
 
-unlink('/tmp/hello', (err) => {
-  if (err) throw err;
-  console.log('successfully deleted /tmp/hello');
-});
+
+// let a=20;
+// let b=0;
+
+
+// let lateData=new Promise((resolve,reject)=>{
+//   setTimeout(()=>{
+//     resolve(40);
+//   },3000)
+// });
+
+// lateData.then((data)=>{
+//   console.log(a+data);
+// });
+
+
+// let data1=20;
+// // let data2=0;
+
+// let waitingData=new Promise((resolve,reject)=>{
+//   setTimeout(() => {
+//     resolve(300)
+//   }, 3000);
+// });
+
+// waitingData.then((data2)=>{
+//   let res = data1+data2;
+//   console.log(res);
+// })
+
+
+// call stack
+
+console.log('starting up');
+setTimeout(() => {
+  console.log('2 sec delay');
+}, 2000);
+
+setTimeout(() => {
+  console.log('0 sec delay');
+}, 0);
+
+console.log('finishing up');
