@@ -740,13 +740,48 @@
 
 // call stack
 
-console.log('starting up');
-setTimeout(() => {
-  console.log('2 sec delay');
-}, 2000);
+// console.log('starting up');
+// setTimeout(() => {
+//   console.log('2 sec delay');
+// }, 2000);
 
-setTimeout(() => {
-  console.log('0 sec delay');
-}, 0);
+// setTimeout(() => {
+//   console.log('0 sec delay');
+// }, 0);
 
-console.log('finishing up');
+// console.log('finishing up');
+
+
+// let a=200;
+// let b=0;
+
+// let waitingData=new Promise((resolve,reject)=>{
+//   setTimeout(() => {
+//     resolve(100)
+//   }, 3000);
+// });
+
+// waitingData.then((value)=>{
+//   let res=a+value;
+//   console.log(res);
+// })
+
+
+// express js
+
+const express = require('express');
+const app = express();
+
+app.get('',(req,res)=>{
+  res.send('Hello, this is homepage')
+});
+
+app.get('/about',(req,res)=>{
+  res.send('Hello, this is about page')
+});
+
+app.get('/help',(req,res)=>{
+  res.send('Hello, this is help page')
+});
+
+app.listen(4200);
