@@ -788,35 +788,37 @@
 // app.listen(4200);
 
 
-// error 
+const express = require('express');
+const app = express();
 
-// // Throws with a ReferenceError because z is not defined.
-// try {
-//   const m = 1;
-//   const n = m + z;
-// } catch (err) {
-//   // Handle the error here.
-// }
-
-// const fs = require('fs/promises');
-
-// (async () => {
-//   let data;
-//   try {
-//     data = await fs.readFile('a file that does not exist');
-//   } catch (err) {
-//     console.error('There was an error reading the file!', err);
-//     return;
-//   }
-//   // Otherwise handle the data
-// })();
-
-
-const fs = require('node:fs');
-fs.readFile('a file that does not exist', (err, data) => {
-  if (err) {
-    console.error('There was an error reading the file!', err);
-    return;
-  }
-  // Otherwise handle the data
+app.get('',(req,res)=>{
+  res.send('<h1>Hello, this is home page</h1> <a href="/about">Go to about page</a>')
 });
+
+app.get('/about',(req,res)=>{
+  res.send(`
+    <input type="text" placeholder="User name" value=" ${req.query.name}" />
+    <button>Click me</button>
+    <a href="/">Go to homepage</a>
+    `)
+});
+
+app.get('/help',(req,res)=>{
+  res.send([
+    {
+      name:'john',
+      email:'john@test.com'
+    },
+    {
+      name:'jiya',
+      email:'jiya@test.com'
+    },
+    {
+      name:'doe',
+      email:'doe@test.com'
+    }
+  ])
+});
+
+app.listen(4200);
+
