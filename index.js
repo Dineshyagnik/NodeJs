@@ -788,37 +788,51 @@
 // app.listen(4200);
 
 
+// const express = require('express');
+// const app = express();
+
+// app.get('',(req,res)=>{
+//   res.send('<h1>Hello, this is home page</h1> <a href="/about">Go to about page</a>')
+// });
+
+// app.get('/about',(req,res)=>{
+//   res.send(`
+//     <input type="text" placeholder="User name" value=" ${req.query.name}" />
+//     <button>Click me</button>
+//     <a href="/">Go to homepage</a>
+//     `)
+// });
+
+// app.get('/help',(req,res)=>{
+//   res.send([
+//     {
+//       name:'john',
+//       email:'john@test.com'
+//     },
+//     {
+//       name:'jiya',
+//       email:'jiya@test.com'
+//     },
+//     {
+//       name:'doe',
+//       email:'doe@test.com'
+//     }
+//   ])
+// });
+
+// app.listen(4200);
+
+
+
+// Make HTML page using node 
+
 const express = require('express');
+const path = require('path');
 const app = express();
 
-app.get('',(req,res)=>{
-  res.send('<h1>Hello, this is home page</h1> <a href="/about">Go to about page</a>')
-});
+const publicPath = path.join(__dirname,'public');
+// console.log(publicPath);
 
-app.get('/about',(req,res)=>{
-  res.send(`
-    <input type="text" placeholder="User name" value=" ${req.query.name}" />
-    <button>Click me</button>
-    <a href="/">Go to homepage</a>
-    `)
-});
-
-app.get('/help',(req,res)=>{
-  res.send([
-    {
-      name:'john',
-      email:'john@test.com'
-    },
-    {
-      name:'jiya',
-      email:'jiya@test.com'
-    },
-    {
-      name:'doe',
-      email:'doe@test.com'
-    }
-  ])
-});
+app.use(express.static(publicPath));
 
 app.listen(4200);
-
