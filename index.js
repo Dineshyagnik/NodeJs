@@ -826,13 +826,56 @@
 
 // Make HTML page using node 
 
-const express = require('express');
-const path = require('path');
-const app = express();
+// const express = require('express');
+// const path = require('path');
+// const app = express();
 
-const publicPath = path.join(__dirname,'public');
-// console.log(publicPath);
+// const publicPath = path.join(__dirname,'public');
+// // console.log(publicPath);
 
-app.use(express.static(publicPath));
+// app.use(express.static(publicPath));
 
-app.listen(4200);
+// app.listen(4200);
+
+
+// let https;
+// try {
+//   https = require('node:https');
+// } catch (err) {
+//   console.error('https support is disabled!');
+// }
+
+// let https;
+// try {
+//   https = await import('node:https');
+// } catch (err) {
+//   console.error('https support is disabled!');
+// }
+
+// // curl -k https://localhost:8000/
+// const https = require('node:https');
+// const fs = require('node:fs');
+
+// const options = {
+//   key: fs.readFileSync('test/fixtures/keys/agent2-key.pem'),
+//   cert: fs.readFileSync('test/fixtures/keys/agent2-cert.pem'),
+// };
+
+// https.createServer(options, (req, res) => {
+//   res.writeHead(200);
+//   res.end('hello world\n');
+// }).listen(8000);
+
+
+const https = require('node:https');
+const fs = require('node:fs');
+
+const options = {
+  pfx: fs.readFileSync('test/fixtures/test_cert.pfx'),
+  passphrase: 'sample',
+};
+
+https.createServer(options, (req, res) => {
+  res.writeHead(200);
+  res.end('hello world\n');
+}).listen(8000);
