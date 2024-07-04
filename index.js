@@ -838,44 +838,28 @@
 // app.listen(4200);
 
 
-// let https;
-// try {
-//   https = require('node:https');
-// } catch (err) {
-//   console.error('https support is disabled!');
-// }
+const express = require('express');
+const path = require('path');
+const app = express();
 
-// let https;
-// try {
-//   https = await import('node:https');
-// } catch (err) {
-//   console.error('https support is disabled!');
-// }
+const publicPath = path.join(__dirname,'public');
 
-// // curl -k https://localhost:8000/
-// const https = require('node:https');
-// const fs = require('node:fs');
+// app.use(express.static(publicPath));
 
-// const options = {
-//   key: fs.readFileSync('test/fixtures/keys/agent2-key.pem'),
-//   cert: fs.readFileSync('test/fixtures/keys/agent2-cert.pem'),
-// };
+app.get('',(_,resp)=>{
+  resp.sendFile(`${publicPath}/index.html`)
+});
 
-// https.createServer(options, (req, res) => {
-//   res.writeHead(200);
-//   res.end('hello world\n');
-// }).listen(8000);
+app.get('/about',(_,resp)=>{
+  resp.sendFile(`${publicPath}/about.html`)
+});
 
+app.get('/help',(_,resp)=>{
+  resp.sendFile(`${publicPath}/help.html`)
+});
 
-const https = require('node:https');
-const fs = require('node:fs');
+app.get('*',(_,resp)=>{
+  resp.sendFile(`${publicPath}/nopage.html`)
+});
 
-const options = {
-  pfx: fs.readFileSync('test/fixtures/test_cert.pfx'),
-  passphrase: 'sample',
-};
-
-https.createServer(options, (req, res) => {
-  res.writeHead(200);
-  res.end('hello world\n');
-}).listen(8000);
+app.listen(4200);
